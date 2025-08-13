@@ -1,4 +1,4 @@
-const CONFIG={whatsappNumber:'+212600000000',apiEndpoint:'',instagramUrl:'#',whatsappUrl:'#',facebookUrl:'#'};
+const CONFIG={whatsappNumber:'+212600000000',apiEndpoint:'https://librairie-back-production.up.railway.app/api/devis',instagramUrl:'#',whatsappUrl:'#',facebookUrl:'#'};
 const waBtns=[document.getElementById('cta-wa'),document.getElementById('waForm')];
 waBtns.forEach(b=>b&&b.addEventListener('click',()=>{const p=document.getElementById('prenom')?.value?.trim()||'';const n=document.getElementById('nom')?.value?.trim()||'';const t=document.getElementById('tel')?.value?.trim()||'';const m=document.getElementById('message')?.value?.trim()||'';const text=`Bonjour, je souhaite passer commande/obtenir un devis.%0A%0ANom: ${p} ${n}%0ATéléphone: ${t}%0A${m?`Message: ${encodeURIComponent(m)}%0A`:''}Je joins ma liste en pièce jointe.`;const url=`https://wa.me/${CONFIG.whatsappNumber.replace(/[^0-9]/g,'')}?text=${text}`;window.open(url,'_blank','noopener');}));
 document.getElementById('ig')?.setAttribute('href',CONFIG.instagramUrl);
